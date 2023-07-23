@@ -1,0 +1,29 @@
+.home-header {
+  margin-bottom: 30px;
+}
+
+.home-totals {
+  margin: 12px 12px 30px 12px;
+  padding: 5px;
+  border: solid 0px;
+  border-radius: 5px;
+  color: white;
+}
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.income-item {
+  margin: 10px !important;
+  padding: 10px 50px !important;
+  border: 1px solid rgb(210, 209, 209) !important;
+  border-radius: 5px !important;
+}
+
+.item-image {
+  margin-left: -100px !important;
+}
