@@ -27,3 +27,14 @@
 .item-image {
   margin-left: -100px !important;
 }
+
+.homeImg {
+  margin-top: 50px;
+  width: 400px;
+}
+
+.img-container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}

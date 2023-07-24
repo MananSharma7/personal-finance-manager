@@ -4,6 +4,7 @@ import History from "../Items/History";
 import { useGlobalContext } from "../globalContext";
 import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import homeImg from "./../style/wealth.jpg";
 import "./../style/style.css";
 
 const Home = () => {
@@ -20,6 +21,9 @@ const Home = () => {
   if (!auth.user) {
     return (
       <div className="ui container" style={{ minHeight: "77vh" }}>
+        <div className="img-container">
+          <img className="homeImg" alt="altTxt" src={homeImg} />
+        </div>
         <h3>Please Login!</h3>
         <button className="ui blue button" onClick={() => navigate("/login")}>Login In!</button>
       </div>
