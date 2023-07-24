@@ -24,7 +24,7 @@ const Home = () => {
         <div className="img-container">
           <img className="homeImg" alt="altTxt" src={homeImg} />
         </div>
-        <h3>Please Login!</h3>
+        <h3>Please Login to access full Application!</h3>
         <button className="ui blue button" onClick={() => navigate("/login")}>Login In!</button>
       </div>
     );
