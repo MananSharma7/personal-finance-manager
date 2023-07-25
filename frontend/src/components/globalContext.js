@@ -2,8 +2,8 @@ import React, { useContext, createContext, useState } from "react";
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    BASE_URL: process.env.BASE_URL,
-})
+    baseURL: process.env.REACT_APP_BASE_URL,
+});
 
 const GlobalContext = createContext();
 
@@ -15,7 +15,7 @@ export const GlobalProvider = ({ children }) => {
 
     //calculate incomes
     const addIncome = async (income) => {
-        await axiosInstance.post(`${BASE_URL}add-income`, income)
+        await axiosInstance.post(`${axiosInstance.defaults.baseURL}add-income`, income)
             .catch((err) => {
                 setError(err.response.data.message)
             })
@@ -23,12 +23,12 @@ export const GlobalProvider = ({ children }) => {
     }
 
     const getIncomes = async () => {
-        const response = await axiosInstance.get(`${BASE_URL}get-income`);
+        const response = await axiosInstance.get(`${axiosInstance.defaults.baseURL}get-income`);
         setIncomes(response.data);
     }
 
     const deleteIncome = async (id) => {
-        await axiosInstance.delete(`${BASE_URL}delete-income/${id}`);
+        await axiosInstance.delete(`${axiosInstance.defaults.baseURL}delete-income/${id}`);
         getIncomes();
     }
 
@@ -43,7 +43,7 @@ export const GlobalProvider = ({ children }) => {
 
     //calculate incomes
     const addExpense = async (income) => {
-        await axiosInstance.post(`${BASE_URL}add-expense`, income)
+        await axiosInstance.post(`${axiosInstance.defaults.baseURL}add-expense`, income)
             .catch((err) => {
                 setError(err.response.data.message)
             });
@@ -51,12 +51,12 @@ export const GlobalProvider = ({ children }) => {
     }
 
     const getExpenses = async () => {
-        const response = await axiosInstance.get(`${BASE_URL}get-expense`);
+        const response = await axiosInstance.get(`${axiosInstance.defaults.baseURL}get-expense`);
         setExpenses(response.data);
     }
 
     const deleteExpense = async (id) => {
-        await axiosInstance.delete(`${BASE_URL}delete-expense/${id}`);
+        await axiosInstance.delete(`${axiosInstance.defaults.baseURL}delete-expense/${id}`);
         getExpenses();
     }
 

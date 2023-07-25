@@ -7,7 +7,7 @@ const Expenses = () => {
   const { expenses, getExpenses, deleteExpense, totalExpenses } = useGlobalContext();
   useEffect(() => {
     getExpenses()
-  }, [])
+  }, [getExpenses])
 
 
   return (
