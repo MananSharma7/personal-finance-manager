@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     getIncomes();
     getExpenses();
-  }, [getIncomes, getExpenses]);
+  }, []);
 
   if (!auth.user) {
     return (
