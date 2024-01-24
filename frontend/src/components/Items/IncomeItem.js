@@ -14,7 +14,7 @@ const IncomeItem = ({
 }) => {
   const categoryIcon = () => {
     switch (category) {
-      case 'Salary':
+      case 'salary':
         return "money bill alternate outline";
       case 'freelancing':
         return 'desktop'
@@ -28,6 +28,20 @@ const IncomeItem = ({
         return 'building outline';
       case 'youtube':
         return "youtube";
+      case 'takeaways':
+        return "coffee icon";
+      case 'education':
+        return "university icon";
+      case 'groceries':
+        return "shopping bag icon";
+      case 'health':
+        return "hospital symbol icon";
+      case 'subscriptions':
+        return "tv icon";
+      case 'clothing':
+        return "black tie icon";
+      case 'travelling':
+        return "bus icon";
       case 'other':
         return "dollar sign";
       default:
@@ -36,28 +50,32 @@ const IncomeItem = ({
   }
 
   return (
-    <div className="item income-item">
-      <div className="small image ">
-        <i className={`${categoryIcon(category)} huge icon`}></i>
+    <div id="item-container" className="ui segment">
+      <div>
+        <i className={`${categoryIcon(category)} big icon`}></i>
       </div>
-      <div className="content item-image">
-        <div className="header">
-          {title}
+      <div id="items">
+        <div id="item-top">
+          <h3>{title}</h3>
         </div>
-        <div className="description ui grid">
-          <p>${amount}</p>
-          {moment(date).format('DD-MM-YYYY')}
+        <div id="item-down">
+          <div>
+            ${amount}
+          </div>
+          <div>
+            {moment(date).format('DD-MM-YYYY')}
+          </div>
           <p>
             {description}
           </p>
-          <div className="ui image">
-            <button
-              className="ui icon button red"
-              onClick={() => deleteItem(id)}
-            >
-              <i className="trash icon"></i>
-            </button>
-          </div>
+        </div>
+        <div id="item-button">
+          <button
+            className="ui icon button red"
+            onClick={() => deleteItem(id)}
+          >
+            <i className="trash icon"></i>
+          </button>
         </div>
       </div>
     </div>

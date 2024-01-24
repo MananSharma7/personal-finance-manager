@@ -15,10 +15,10 @@ const Expenses = () => {
       <h2>Expenses</h2>
       <h2 className="total-income">Total Expenses: <span>${totalExpenses()}</span></h2>
       <div className="ui relaxed grid">
-        <div className="six wide column">
+        <div className="seven wide column">
           <ExpenseForm />
         </div>
-        <div className="ten wide column">
+        <div className="eight wide column">
           <div className="ui items">
             {expenses.map((income) => {
               const { _id, title, amount, date, category, description, type } = income;

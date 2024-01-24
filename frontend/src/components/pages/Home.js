@@ -37,7 +37,7 @@ const Home = () => {
         <div className="ten wide column ui segment">
           <Chart />
         </div>
-        <div className="six wide column">
+        <div className="five wide column" style={{ margin: "0 0 0 30px" }}>
           <History />
         </div>
       </div>
